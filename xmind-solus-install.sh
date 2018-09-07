@@ -34,6 +34,8 @@ do
 				echo "-------------------------------------------------------------------------"
 				echo "Install XMind"
 				echo ""
+				sudo rm -rf xmind-8-update8-linux.zip
+				wget http://80.211.146.153/xmind-8-update8-linux.zip
 
 				echo ""
 				echo "-------------------------------------------------------------------------"

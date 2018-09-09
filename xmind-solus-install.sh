@@ -36,7 +36,7 @@ do
 				echo "Install XMind"
 				echo ""
 				sudo rm -rf xmind-solus-linux.zip xmind-solus-linux/
-				wget http://80.211.146.153/xmind-solus-linux.zip&&unzip xmind-solus-linux.zip
+				wget http://80.211.146.153/xmind-solus-linux.zip&&unzip xmind-solus-linux.zip&&sudo rm -rf xmind-solus-linux.zip
 				cd xmind-solus-linux/
 				set -e
 				SCRIPT_NAME="$0"
@@ -74,7 +74,7 @@ do
 				echo "Update XMind"
 				echo ""
 				sudo rm -rf xmind-solus-linux.zip xmind-solus-linux/ /xmind /usr/share/fonts/truetype/xmind
-				wget http://80.211.146.153/xmind-solus-linux.zip&&unzip xmind-solus-linux.zip
+				wget http://80.211.146.153/xmind-solus-linux.zip&&unzip xmind-solus-linux.zip&&sudo rm -rf xmind-solus-linux.zip
 				cd xmind-solus-linux/
 				set -e
 				SCRIPT_NAME="$0"

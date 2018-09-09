@@ -24,7 +24,7 @@ do
 	echo "| 4 - Exit                                                              |"
 	echo "|_______________________________________________________________________|"
 	echo ""
-	echo "Please select your option 1 to 3:"
+	echo "Please select your option 1 to 4:"
 	read op
 
 	case $op in 

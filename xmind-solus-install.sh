@@ -35,7 +35,7 @@ do
 				echo "-------------------------------------------------------------------------"
 				echo "Install XMind"
 				echo ""
-				sudo rm -rf xmind-solus-linux.zip
+				sudo rm -rf xmind-solus-linux.zip xmind-solus-linux/
 				wget http://80.211.146.153/xmind-solus-linux.zip&&unzip xmind-solus-linux.zip
 				cd xmind-solus-linux/
 				set -e
@@ -73,7 +73,7 @@ do
 				echo "-------------------------------------------------------------------------"
 				echo "Update XMind"
 				echo ""
-				sudo rm -rf xmind-solus-linux.zip /xmind /usr/share/fonts/truetype/xmind
+				sudo rm -rf xmind-solus-linux.zip xmind-solus-linux/ /xmind /usr/share/fonts/truetype/xmind
 				wget http://80.211.146.153/xmind-solus-linux.zip&&unzip xmind-solus-linux.zip
 				cd xmind-solus-linux/
 				set -e
@@ -111,7 +111,7 @@ do
 				echo "-------------------------------------------------------------------------"
 				echo "Uninstalling XMind"
 				echo ""
-				sudo rm -rf xmind-solus-linux.zip /xmind /usr/share/fonts/truetype/xmind ~/.local/share/applications/XMind.desktop
+				sudo rm -rf xmind-solus-linux.zip xmind-solus-linux/ /xmind /usr/share/fonts/truetype/xmind ~/.local/share/applications/XMind.desktop
 				clear
 				echo ""
 				echo "-------------------------------------------------------------------------"

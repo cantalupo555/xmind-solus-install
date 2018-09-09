@@ -36,7 +36,27 @@ do
 				echo "Install XMind"
 				echo ""
 				sudo rm -rf xmind-8-update8-linux.zip
-				wget http://80.211.146.153/xmind-8-update8-linux.zip
+				wget http://80.211.146.153/xmind-8-update8-solus-linux.zip&&unzip xmind-8-update8-solus-linux.zip
+
+				set -e
+
+				SCRIPT_NAME="$0"
+				SCRIPT_DIR="$(cd "$(dirname "$SCRIPT_NAME")" && pwd)"
+
+				echo "[setup] Installing dependencies...."
+				sudo eopkg install rsync openjdk-8 lame
+
+				FONTS_DIR="$SCRIPT_DIR/fonts"
+				if [ -d "$FONTS_DIR" ]; then
+    			echo "[setup] Installing custom fonts...."
+				mkdir -p /usr/share/fonts/truetype/xmind
+				rsync -av "$FONTS_DIR/" /usr/share/fonts/truetype/xmind/
+				fc-cache -f
+				else
+				echo "[setup] WARNING: Custom fonts for XMind are not found."
+				fi
+
+				echo "[setup] Done."
 
 				echo ""
 				echo "-------------------------------------------------------------------------"

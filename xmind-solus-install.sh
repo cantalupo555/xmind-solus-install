@@ -52,7 +52,8 @@ do
 				else
 				echo "[setup] WARNING: Custom fonts for XMind are not found."
 				fi
-				echo "[setup] Done."
+				echo "[setup] Done."&&cd ..&&mv xmind-8-update8-solus-linux/ xmind/&&sudo mv xmind/ /
+				mv /xmind/configuration/XMind.desktop ~/.local/share/applications
 				echo ""
 				echo "-------------------------------------------------------------------------"
 				echo "-------------------------------------------------------------------------"
@@ -72,7 +73,7 @@ do
 				echo "-------------------------------------------------------------------------"
 				echo "Update XMind"
 				echo ""
-				
+				sudo rm -rf xmind-8-update8-solus-linux.zip
 				clear
 				echo ""
 				echo "-------------------------------------------------------------------------"

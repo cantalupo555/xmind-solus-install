@@ -56,7 +56,12 @@ do
 				echo "[setup] WARNING: Custom fonts for XMind are not found."
 				fi
 				echo "[setup] Done."&&cd ..&&mv xmind-solus-linux/ xmind/&&sudo mv xmind/ /
-				mv /xmind/configuration/XMind.desktop ~/.local/share/applications/
+				if [ -e ~/.local/share/applications/ ]; then
+					mv /xmind/configuration/XMind.desktop ~/.local/share/applications/
+					else
+						mkdir ~/.local/share/applications/
+						mv /xmind/configuration/XMind.desktop ~/.local/share/applications/
+						fi
 				echo ""
 				echo "-------------------------------------------------------------------------"
 				echo "-------------------------------------------------------------------------"

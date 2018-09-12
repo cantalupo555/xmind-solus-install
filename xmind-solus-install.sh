@@ -1,6 +1,9 @@
 #!/bin/bash
 #cantalupo555
-
+if [ $UID -ne 1000 ]; then
+    echo "Install failed: you can not be logged in as 'root'"
+    exit 1
+fi
 o1(){
 	echo ""
 	echo "-------------------------------------------------------------------------"

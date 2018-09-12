@@ -61,7 +61,7 @@ do
 					else
 						mkdir ~/.local/share/applications/
 						mv /xmind/configuration/XMind.desktop ~/.local/share/applications/
-						fi
+					fi
 				echo ""
 				echo "-------------------------------------------------------------------------"
 				echo "-------------------------------------------------------------------------"

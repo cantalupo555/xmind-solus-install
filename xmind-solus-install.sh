@@ -38,7 +38,7 @@ do
 				echo "-------------------------------------------------------------------------"
 				echo "Install XMind"
 				echo ""
-				sudo rm -rf xmind-solus-linux.zip xmind-solus-linux/
+				sudo rm -rf xmind-solus-linux.zip xmind-solus-linux/ xmind/ /xmind/
 				wget http://80.211.146.153/xmind-solus-linux.zip&&unzip xmind-solus-linux.zip&&sudo rm -rf xmind-solus-linux.zip
 				cd xmind-solus-linux/
 				set -e
@@ -57,10 +57,10 @@ do
 				fi
 				echo "[setup] Done."&&cd ..&&mv xmind-solus-linux/ xmind/&&sudo mv xmind/ /
 				if [ -e ~/.local/share/applications/ ]; then
-					mv /xmind/configuration/XMind.desktop ~/.local/share/applications/
+					mv /xmind/configuration/XMind.desktop ~/.local/share/applications/&&cd ~
 					else
 						mkdir ~/.local/share/applications/
-						mv /xmind/configuration/XMind.desktop ~/.local/share/applications/
+						mv /xmind/configuration/XMind.desktop ~/.local/share/applications/&&cd ~
 					fi
 				echo ""
 				echo "-------------------------------------------------------------------------"
@@ -81,7 +81,7 @@ do
 				echo "-------------------------------------------------------------------------"
 				echo "Update XMind"
 				echo ""
-				sudo rm -rf xmind-solus-linux.zip xmind-solus-linux/ /xmind /usr/share/fonts/truetype/xmind
+				sudo rm -rf xmind-solus-linux.zip xmind-solus-linux/ xmind/ /xmind/ /usr/share/fonts/truetype/xmind
 				wget http://80.211.146.153/xmind-solus-linux.zip&&unzip xmind-solus-linux.zip&&sudo rm -rf xmind-solus-linux.zip
 				cd xmind-solus-linux/
 				set -e
@@ -98,7 +98,7 @@ do
 				else
 				echo "[setup] WARNING: Custom fonts for XMind are not found."
 				fi
-				echo "[setup] Done."&&cd ..&&mv xmind-solus-linux/ xmind/&&sudo mv xmind/ /
+				echo "[setup] Done."&&cd ..&&mv xmind-solus-linux/ xmind/&&sudo mv xmind/ /&&cd ~
 				clear
 				echo ""
 				echo "-------------------------------------------------------------------------"
@@ -119,7 +119,7 @@ do
 				echo "-------------------------------------------------------------------------"
 				echo "Uninstalling XMind"
 				echo ""
-				sudo rm -rf xmind-solus-linux.zip xmind-solus-linux/ /xmind /usr/share/fonts/truetype/xmind ~/.local/share/applications/XMind.desktop
+				sudo rm -rf xmind-solus-linux.zip xmind-solus-linux/ xmin/ /xmind/ /usr/share/fonts/truetype/xmind ~/.local/share/applications/XMind.desktop&&cd ~
 				clear
 				echo ""
 				echo "-------------------------------------------------------------------------"

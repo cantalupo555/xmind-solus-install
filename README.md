@@ -23,4 +23,8 @@ When XMind is installed, you can run the script again and you will get the choic
 
 - **Solus Project**
 
+If you have found a problem, [click here](https://github.com/cantalupo555/xmind-solus-install/issues/new).
+
+## Screenshot
+
 ![](https://i.imgur.com/CyA2OIZ.png)

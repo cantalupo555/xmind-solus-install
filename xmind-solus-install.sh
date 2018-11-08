@@ -52,9 +52,9 @@ do
 				sudo mkdir -p /usr/share/fonts/truetype/xmind
 				sudo rsync -av "$FONTS_DIR/" /usr/share/fonts/truetype/xmind/
 				fc-cache -f
-				else
-				echo "[setup] WARNING: Custom fonts for XMind are not found."
-				fi
+					else
+						echo "[setup] WARNING: Custom fonts for XMind are not found."
+					fi
 				echo "[setup] Done."&&cd ..&&mv xmind-solus-linux/ xmind/&&sudo mv xmind/ /
 				if [ -e ~/.local/share/applications/ ]; then
 					mv /xmind/configuration/XMind.desktop ~/.local/share/applications/&&cd ~

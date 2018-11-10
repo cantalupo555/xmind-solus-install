@@ -11,7 +11,7 @@ o1(){
 	echo "-------------------------------------------------------------------------"
 	echo "Press ENTER to go back!"	
 	echo ""
-	read v	
+	read v
 }
 
 while true 
@@ -38,29 +38,37 @@ do
 				echo "-------------------------------------------------------------------------"
 				echo "Install XMind"
 				echo ""
-				sudo rm -rf xmind-solus-linux.zip xmind-solus-linux/ xmind/ /xmind/
-				wget http://80.211.146.153/xmind-solus-linux.zip&&unzip xmind-solus-linux.zip&&sudo rm -rf xmind-solus-linux.zip
-				cd xmind-solus-linux/
-				set -e
-				SCRIPT_NAME="$0"
-				SCRIPT_DIR="$(cd "$(dirname "$SCRIPT_NAME")" && pwd)"
-				echo "[setup] Installing dependencies...."
-				sudo eopkg install rsync openjdk-8 lame
-				FONTS_DIR="$SCRIPT_DIR/fonts"
-				if [ -d "$FONTS_DIR" ]; then
-				echo "[setup] Installing custom fonts...."
-				sudo mkdir -p /usr/share/fonts/truetype/xmind
-				sudo rsync -av "$FONTS_DIR/" /usr/share/fonts/truetype/xmind/
-				fc-cache -f
-					else
-						echo "[setup] WARNING: Custom fonts for XMind are not found."
+				if [ -e /xmind/ ]; then
+					echo -e "\nXMind can not be installed, \e[1;33mplease run Option 3 and try again\e[0m"
+					o1
+					if [ -z "$v" ]; then
+						break
 					fi
-				echo "[setup] Done."&&cd ..&&mv xmind-solus-linux/ xmind/&&sudo mv xmind/ /
-				if [ -e ~/.local/share/applications/ ]; then
-					mv /xmind/configuration/XMind.desktop ~/.local/share/applications/&&cd ~
 					else
-						mkdir ~/.local/share/applications/
-						mv /xmind/configuration/XMind.desktop ~/.local/share/applications/&&cd ~
+						sudo rm -rf xmind-solus-linux.zip xmind-solus-linux/ xmind/
+						wget http://80.211.146.153/xmind-solus-linux.zip&&unzip xmind-solus-linux.zip&&sudo rm -rf xmind-solus-linux.zip
+						cd xmind-solus-linux/
+						set -e
+						SCRIPT_NAME="$0"
+						SCRIPT_DIR="$(cd "$(dirname "$SCRIPT_NAME")" && pwd)"
+						echo "[setup] Installing dependencies...."
+						sudo eopkg install rsync openjdk-8 lame
+						FONTS_DIR="$SCRIPT_DIR/fonts"
+						if [ -d "$FONTS_DIR" ]; then
+							echo "[setup] Installing custom fonts...."
+							sudo mkdir -p /usr/share/fonts/truetype/xmind
+							sudo rsync -av "$FONTS_DIR/" /usr/share/fonts/truetype/xmind/
+							fc-cache -f
+							else
+								echo "[setup] WARNING: Custom fonts for XMind are not found."
+							fi
+							echo "[setup] Done."&&cd ..&&mv xmind-solus-linux/ xmind/&&sudo mv xmind/ /
+							if [ -e ~/.local/share/applications/ ]; then
+								mv /xmind/configuration/XMind.desktop ~/.local/share/applications/&&cd ~
+								else
+									mkdir ~/.local/share/applications/
+									mv /xmind/configuration/XMind.desktop ~/.local/share/applications/&&cd ~
+								fi
 					fi
 				echo ""
 				echo "-------------------------------------------------------------------------"
@@ -69,7 +77,7 @@ do
 				echo "Installation Complete"
 				o1
 				if [ -z "$v" ]; then
-				break
+					break
 				fi
 				done
 				;;
@@ -107,7 +115,7 @@ do
 				echo "Update Completed"
 				o1
 				if [ -z "$v" ]; then
-				break
+					break
 				fi
 				done
 				;;
@@ -128,7 +136,7 @@ do
 				echo "Uninstall Completed"
 				o1
 				if [ -z "$v" ]; then
-				break
+					break
 				fi
 				done
 				;;

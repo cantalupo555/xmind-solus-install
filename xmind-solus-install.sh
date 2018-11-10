@@ -89,24 +89,32 @@ do
 				echo "-------------------------------------------------------------------------"
 				echo "Update XMind"
 				echo ""
-				sudo rm -rf xmind-solus-linux.zip xmind-solus-linux/ xmind/ /xmind/ /usr/share/fonts/truetype/xmind
-				wget http://80.211.146.153/xmind-solus-linux.zip&&unzip xmind-solus-linux.zip&&sudo rm -rf xmind-solus-linux.zip
-				cd xmind-solus-linux/
-				set -e
-				SCRIPT_NAME="$0"
-				SCRIPT_DIR="$(cd "$(dirname "$SCRIPT_NAME")" && pwd)"
-				echo "[setup] Installing dependencies...."
-				sudo eopkg install rsync openjdk-8 lame
-				FONTS_DIR="$SCRIPT_DIR/fonts"
-				if [ -d "$FONTS_DIR" ]; then
-				echo "[setup] Installing custom fonts...."
-				sudo mkdir -p /usr/share/fonts/truetype/xmind
-				sudo rsync -av "$FONTS_DIR/" /usr/share/fonts/truetype/xmind/
-				fc-cache -f
-				else
-				echo "[setup] WARNING: Custom fonts for XMind are not found."
-				fi
-				echo "[setup] Done."&&cd ..&&mv xmind-solus-linux/ xmind/&&sudo mv xmind/ /&&cd ~
+				if [ -e /xmind/ ]; then
+					sudo rm -rf xmind-solus-linux.zip xmind-solus-linux/ xmind/ /xmind/ /usr/share/fonts/truetype/xmind/
+					wget http://80.211.146.153/xmind-solus-linux.zip&&unzip xmind-solus-linux.zip&&sudo rm -rf xmind-solus-linux.zip
+					cd xmind-solus-linux/
+					set -e
+					SCRIPT_NAME="$0"
+					SCRIPT_DIR="$(cd "$(dirname "$SCRIPT_NAME")" && pwd)"
+					echo "[setup] Installing dependencies...."
+					sudo eopkg install rsync openjdk-8 lame
+					FONTS_DIR="$SCRIPT_DIR/fonts"
+						if [ -d "$FONTS_DIR" ]; then
+							echo "[setup] Installing custom fonts...."
+							sudo mkdir -p /usr/share/fonts/truetype/xmind
+							sudo rsync -av "$FONTS_DIR/" /usr/share/fonts/truetype/xmind/
+							fc-cache -f
+							else
+								echo "[setup] WARNING: Custom fonts for XMind are not found."
+							fi
+							echo "[setup] Done."&&cd ..&&mv xmind-solus-linux/ xmind/&&sudo mv xmind/ /&&cd ~
+					else
+						echo -e "\nXMind can not be update, \e[1;33mplease run Option 1 and try again\e[0m"
+						o1
+						if [ -z "$v" ]; then
+							break
+						fi
+					fi
 				clear
 				echo ""
 				echo "-------------------------------------------------------------------------"
@@ -127,7 +135,15 @@ do
 				echo "-------------------------------------------------------------------------"
 				echo "Uninstalling XMind"
 				echo ""
-				sudo rm -rf xmind-solus-linux.zip xmind-solus-linux/ xmin/ /xmind/ /usr/share/fonts/truetype/xmind ~/.local/share/applications/XMind.desktop&&cd ~
+				if [ -e /xmind/ ]; then
+					sudo rm -rf xmind-solus-linux.zip xmind-solus-linux/ xmin/ /xmind/ /usr/share/fonts/truetype/xmind/ ~/.local/share/applications/XMind.desktop&&cd ~
+					else
+						echo -e "\nXMind can not be uninstalling, \e[1;33mplease run Option 1 and try again\e[0m"
+						o1
+						if [ -z "$v"]; then
+							break
+						fi
+					fi
 				clear
 				echo ""
 				echo "-------------------------------------------------------------------------"

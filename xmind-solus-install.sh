@@ -4,6 +4,31 @@ if [ $UID -ne 1000 ]; then
     echo "Install failed: you can not be logged in as 'root'"
     exit 1
 fi
+
+echo -e "\n\e[1;33mChecking that minimal requirements are ok\e[0m"
+if [ -f /etc/centos-release ]; then
+    OS="CentOs"
+    VERFULL=$(sed 's/^.*release //;s/ (Fin.*$//' /etc/centos-release)
+    VER=${VERFULL:0:1} # return 6 or 7
+elif [ -f /etc/lsb-release ]; then
+    OS=$(grep DISTRIB_ID /etc/lsb-release | sed 's/^.*=//')
+    VER=$(grep DISTRIB_RELEASE /etc/lsb-release | sed 's/^.*=//')
+elif [ -f /etc/os-release ]; then
+    OS=$(grep -w ID /etc/os-release | sed 's/^.*=//')
+    VER=$(grep VERSION_ID /etc/os-release | sed 's/^.*"\(.*\)"/\1/')
+ else
+    OS=$(uname -s)
+    VER=$(uname -r)
+fi
+ARCH=$(uname -m)
+echo "Detected : $OS  $VER  $ARCH"&&r='add-apt-repository'
+if [[ "$OS" = "Solus" ]] ; then
+    echo "Ok."
+else
+    echo "Sorry, this OS is not supported." 
+    exit 1
+fi
+
 o1(){
 	echo ""
 	echo "-------------------------------------------------------------------------"

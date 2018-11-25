@@ -1,10 +1,38 @@
 #!/bin/bash
 #cantalupo555
+clear
+echo -e "\n\e[1;33mChecking user\e[0m"
 if [ $UID -ne 1000 ]; then
+	sleep 1
+    echo "....."
+    sleep 1
+    echo "....."
+    sleep 1
+    echo "....."
+    sleep 1
+    echo "....."
+    sleep 1
+    echo "....."
+    sleep 1
     echo "Install failed: you can not be logged in as 'root'"
+    sleep 5
     exit 1
-fi
+    	else
+    		echo "OK"
+    	    sleep 1
+    		echo "....."
+    		sleep 1
+    		echo "....."
+    		sleep 1
+    		echo "....."
+    		sleep 1
+    		echo "....."
+    		sleep 1
+    		echo "....."
+    		sleep 1
+    	fi
 
+clear
 echo -e "\n\e[1;33mChecking that minimal requirements are ok\e[0m"
 if [ -f /etc/centos-release ]; then
     OS="CentOs"
@@ -23,11 +51,35 @@ fi
 ARCH=$(uname -m)
 echo "Detected : $OS  $VER  $ARCH"&&r='add-apt-repository'
 if [[ "$OS" = "Solus" ]] ; then
-    echo "Ok."
-else
-    echo "Sorry, this OS is not supported." 
-    exit 1
-fi
+    echo "OK"
+    sleep 1
+    echo "....."
+    sleep 1
+    echo "....."
+    sleep 1
+    echo "....."
+    sleep 1
+    echo "....."
+    sleep 1
+    echo "....."
+    sleep 1
+		else
+			sleep 1
+    		echo "....."
+    		sleep 1
+    		echo "....."
+    		sleep 1
+    		echo "....."
+    		sleep 1
+    		echo "....."
+    		sleep 1
+    		echo "....."
+    		sleep 1
+    		echo "Sorry, this OS is not supported."
+    		sleep 5
+    		exit 1
+		fi
+sleep 5
 
 o1(){
 	echo ""
@@ -95,6 +147,7 @@ do
 									mv /xmind/configuration/XMind.desktop ~/.local/share/applications/&&cd ~
 								fi
 					fi
+				clear
 				echo ""
 				echo "-------------------------------------------------------------------------"
 				echo "-------------------------------------------------------------------------"

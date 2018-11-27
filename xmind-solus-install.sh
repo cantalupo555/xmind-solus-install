@@ -213,14 +213,15 @@ do
 				echo "-------------------------------------------------------------------------"
 				echo "Uninstalling XMind"
 				echo ""
-				if [ -e /xmind/ ]; then
+				if [ -e /xmind/ ]; then					
+					sudo rm -rf xmind* /xmind/ /usr/share/fonts/truetype/xmind/ ~/.local/share/applications/XMind.desktop&&cd ~
 					sleep 2
 					echo "		Uninstalling"
 					sleep 2
 					echo "			Uninstalling"
 					sleep 2
 					echo "				Uninstalling"
-					sudo rm -rf xmind-solus-linux.zip xmind-solus-linux/ xmin/ /xmind/ /usr/share/fonts/truetype/xmind/ ~/.local/share/applications/XMind.desktop&&cd ~
+					sleep 2
 					else
 						echo -e "\nXMind can not be uninstalling, \e[1;33mplease run Option 1 and try again\e[0m"
 						o1

@@ -122,7 +122,7 @@ do
 						break
 					fi
 					else
-						sudo rm -rf xmind-solus-linux.zip xmind-solus-linux/ xmind/
+						sudo rm -rf xmind*
 						wget http://80.211.146.153/xmind-solus-linux.zip&&unzip xmind-solus-linux.zip&&sudo rm -rf xmind-solus-linux.zip
 						cd xmind-solus-linux/
 						set -e

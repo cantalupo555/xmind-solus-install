@@ -168,7 +168,7 @@ do
 				echo "Update XMind"
 				echo ""
 				if [ -e /xmind/ ]; then
-					sudo rm -rf xmind-solus-linux.zip xmind-solus-linux/ xmind/ /xmind/ /usr/share/fonts/truetype/xmind/
+					sudo rm -rf xmind* /xmind/ /usr/share/fonts/truetype/xmind/
 					wget http://80.211.146.153/xmind-solus-linux.zip&&unzip xmind-solus-linux.zip&&sudo rm -rf xmind-solus-linux.zip
 					cd xmind-solus-linux/
 					set -e

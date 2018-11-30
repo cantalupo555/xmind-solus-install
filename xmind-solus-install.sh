@@ -124,7 +124,7 @@ do
 					else
 						sudo rm -rf xmind*
 						wget https://dl3.xmind.net/xmind-8-update8-linux.zip -O xmind-solus.zip&&mkdir xmind-solus/&&mv xmind-solus.zip xmind-solus/
-						cd xmind-solus/&&unzip xmind-solus.zip&&sudo rm -rf xmind-solus.zip
+						cd xmind-solus/&&unzip xmind-solus.zip&&sudo rm -rf xmind-solus.zip setup.sh
 						set -e
 						SCRIPT_NAME="$0"
 						SCRIPT_DIR="$(cd "$(dirname "$SCRIPT_NAME")" && pwd)"

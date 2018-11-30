@@ -122,6 +122,8 @@ do
 						break
 					fi
 					else
+						version="$(wget -qO- https://raw.githubusercontent.com/cantalupo555/xmind-solus-install/master/version.txt)"
+						wget https://github.com/cantalupo555/xmind-solus-install/raw/master/default128.png
 						sudo rm -rf xmind*
 						wget https://dl3.xmind.net/xmind-8-update8-linux.zip -O xmind-solus.zip&&mkdir xmind-solus/&&mv xmind-solus.zip xmind-solus/
 						cd xmind-solus/&&unzip xmind-solus.zip&&sudo rm -rf xmind-solus.zip setup.sh

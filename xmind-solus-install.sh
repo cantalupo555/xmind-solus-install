@@ -123,7 +123,6 @@ do
 					fi
 					else
 						version="$(wget -qO- https://raw.githubusercontent.com/cantalupo555/xmind-solus-install/master/version.txt)"
-						ico="$(wget -qO- https://github.com/cantalupo555/xmind-solus-install/raw/master/default128.png)"
 						sudo rm -rf xmind*
 						wget $version -O xmind-solus.zip&&mkdir xmind-solus/&&mv xmind-solus.zip xmind-solus/
 						cd xmind-solus/&&unzip xmind-solus.zip&&sudo rm -rf xmind-solus.zip setup.sh

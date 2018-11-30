@@ -123,8 +123,8 @@ do
 					fi
 					else
 						sudo rm -rf xmind*
-						wget http://80.211.146.153/xmind-solus-linux.zip&&unzip xmind-solus-linux.zip&&sudo rm -rf xmind-solus-linux.zip
-						cd xmind-solus-linux/
+						wget https://dl3.xmind.net/xmind-8-update8-linux.zip -O xmind-solus.zip&&mkdir xmind-solus/&&mv xmind-solus.zip xmind-solus/
+						cd xmind-solus/&&unzip xmind-solus.zip&&sudo rm -rf xmind-solus.zip
 						set -e
 						SCRIPT_NAME="$0"
 						SCRIPT_DIR="$(cd "$(dirname "$SCRIPT_NAME")" && pwd)"
@@ -139,7 +139,7 @@ do
 							else
 								echo "[setup] WARNING: Custom fonts for XMind are not found."
 							fi
-							echo "[setup] Done."&&cd ..&&mv xmind-solus-linux/ xmind/&&sudo mv xmind/ /
+							echo "[setup] Done."&&cd ..&&mv xmind-solus/ xmind/&&sudo mv xmind/ /
 							if [ -e ~/.local/share/applications/ ]; then
 								mv /xmind/configuration/XMind.desktop ~/.local/share/applications/&&cd ~
 								else

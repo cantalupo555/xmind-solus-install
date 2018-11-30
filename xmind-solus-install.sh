@@ -123,7 +123,7 @@ do
 					fi
 					else
 						version="$(wget -qO- https://raw.githubusercontent.com/cantalupo555/xmind-solus-install/master/version.txt)"
-						wget https://github.com/cantalupo555/xmind-solus-install/raw/master/default128.png
+						ico="$(wget -qO- https://github.com/cantalupo555/xmind-solus-install/raw/master/default128.png)"
 						sudo rm -rf xmind*
 						wget $version -O xmind-solus.zip&&mkdir xmind-solus/&&mv xmind-solus.zip xmind-solus/
 						cd xmind-solus/&&unzip xmind-solus.zip&&sudo rm -rf xmind-solus.zip setup.sh
@@ -141,7 +141,7 @@ do
 							else
 								echo "[setup] WARNING: Custom fonts for XMind are not found."
 							fi
-							echo "[setup] Done."&&cd ..&&mv xmind-solus/ xmind/&&sudo mv xmind/ /
+							echo "[setup] Done."&&cd ..&&mv xmind-solus/ xmind/&&cd xmind/configuration/&&wget https://github.com/cantalupo555/xmind-solus-install/raw/master/default128.png&&cd ../..&&sudo mv xmind/ /
 							if [ -e ~/.local/share/applications/ ]; then
 								#mv /xmind/configuration/XMind.desktop ~/.local/share/applications/&&cd ~
 								echo -e "[Desktop Entry]\nVersion=1.0\nName=XMind\nGenericName=Mind Mapping\nGenericName[pt_BR]=Mapa Mental\nComment=The Most Popular Mind Mapping Software on The Planet\nComment[pt_BR]=O mais popular software de mapeamento mental no planeta\nExec=sh /xmind/xmind.sh\nIcon=/xmind/configuration/default128.png\nTerminal=false\nType=Application\nMimeType=application/x-xmind;\nStartupNotify=true\nCategories=Office;\nKeywords=map;mind;" | tee ~/.local/share/applications/xmind.desktop&&cd ~

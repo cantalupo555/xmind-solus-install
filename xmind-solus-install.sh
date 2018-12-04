@@ -31,7 +31,6 @@ if [ $UID -ne 1000 ]; then
     		echo "....."
     		sleep 1
     	fi
-
 clear
 echo -e "\n\e[1;33mChecking that minimal requirements are ok\e[0m"
 if [ -f /etc/centos-release ]; then
@@ -80,6 +79,41 @@ if [[ "$OS" = "Solus" ]] ; then
     		exit 1
 		fi
 sleep 5
+clear
+echo -e "\n\e[1;33mChecking the Network\e[0m"
+	sleep 1
+    echo "....."
+    sleep 1
+    echo "....."
+    sleep 1
+    echo "....."
+    sleep 1
+    echo "....."
+    sleep 1
+    echo -e ".....\n"
+    sleep 1
+if ! ping -c 5 google.com -q ; then
+	echo
+	echo -e "Connect with Google, FAIL."
+	exit
+	echo
+		else
+			echo
+			echo -e "\033[1;32mConnect with Google, OK.\033[0m"
+			echo
+		fi
+	sleep 2
+if ! ping -c 5 dl3.xmind.net -q ; then
+	echo
+	echo -e "Connect with XMind, FAIL."
+	exit
+	echo
+		else
+			echo
+			echo -e "\033[1;32mConnect with XMind, OK.\033[0m"
+			echo
+		fi
+sleep 3
 
 o1(){
 	echo ""

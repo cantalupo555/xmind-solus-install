@@ -14,7 +14,7 @@ if [ $UID -ne 1000 ]; then
     sleep 1
     echo "....."
     sleep 1
-    echo "Install failed: you can not be logged in as 'root'"
+    echo "\033[1;31mInstall failed: you can not be logged in as 'root'\033"
     sleep 5
     exit 1
     	else
@@ -29,7 +29,7 @@ if [ $UID -ne 1000 ]; then
     		sleep 1
     		echo "....."
     		sleep 1
-    		echo "OK"
+    		echo "\033[1;32mOK\033"
     		sleep 3	
     	fi
 clear
@@ -62,7 +62,7 @@ if [[ "$OS" = "Solus" ]] ; then
     sleep 1
     echo "....."
     sleep 1
-    echo "OK"
+    echo "\033[1;32mOK\033"
     sleep 5
 		else
 			sleep 1
@@ -76,7 +76,7 @@ if [[ "$OS" = "Solus" ]] ; then
     		sleep 1
     		echo "....."
     		sleep 1
-    		echo "Sorry, this OS is not supported."
+    		echo "\033[1;31mSorry, this OS is not supported.\033"
     		sleep 5
     		exit 1
 		fi

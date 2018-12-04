@@ -14,7 +14,7 @@ if [ $UID -ne 1000 ]; then
     sleep 1
     echo "....."
     sleep 1
-    echo "\033[1;31mInstall failed: you can not be logged in as 'root'\033"
+    echo -e "\033[1;31mInstall failed: you can not be logged in as 'root'\033"
     sleep 5
     exit 1
     	else
@@ -29,7 +29,7 @@ if [ $UID -ne 1000 ]; then
     		sleep 1
     		echo "....."
     		sleep 1
-    		echo "\033[1;32mOK\033"
+    		echo -e "\033[1;32mOK\033"
     		sleep 3	
     	fi
 clear
@@ -62,7 +62,7 @@ if [[ "$OS" = "Solus" ]] ; then
     sleep 1
     echo "....."
     sleep 1
-    echo "\033[1;32mOK\033"
+    echo -e "\033[1;32mOK\033"
     sleep 5
 		else
 			sleep 1
@@ -76,7 +76,7 @@ if [[ "$OS" = "Solus" ]] ; then
     		sleep 1
     		echo "....."
     		sleep 1
-    		echo "\033[1;31mSorry, this OS is not supported.\033"
+    		echo -e "\033[1;31mSorry, this OS is not supported.\033"
     		sleep 5
     		exit 1
 		fi
@@ -96,7 +96,7 @@ echo -e "\n\e[1;33mChecking the Network\e[0m"
 if ! ping -c 5 google.com -q ; then
 	echo
 	echo -e "\033[1;31mConnect with Google, FAIL.\033[0m"
-	exit
+	exit 1
 	echo
 		else
 			echo
@@ -107,7 +107,7 @@ if ! ping -c 5 google.com -q ; then
 if ! ping -c 5 dl3.xmind.net -q ; then
 	echo
 	echo -e "\033[1;31mConnect with XMind, FAIL.\033[0m"
-	exit
+	exit 1
 	echo
 		else
 			echo

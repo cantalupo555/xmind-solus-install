@@ -172,8 +172,8 @@ do
 				echo ""
 				if [ -e /xmind/ ]; then
 					sudo rm -rf xmind* /xmind/ /usr/share/fonts/truetype/xmind/
-					wget http://80.211.146.153/xmind-solus-linux.zip&&unzip xmind-solus-linux.zip&&sudo rm -rf xmind-solus-linux.zip
-					cd xmind-solus-linux/
+					wget $version -O xmind-solus.zip&&mkdir xmind-solus/&&mv xmind-solus.zip xmind-solus/
+					cd xmind-solus/&&unzip xmind-solus.zip&&sudo rm -rf xmind-solus.zip setup.sh
 					set -e
 					SCRIPT_NAME="$0"
 					SCRIPT_DIR="$(cd "$(dirname "$SCRIPT_NAME")" && pwd)"

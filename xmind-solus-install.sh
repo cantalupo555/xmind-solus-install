@@ -171,6 +171,7 @@ do
 				echo "Update XMind"
 				echo ""
 				if [ -e /xmind/ ]; then
+					version="$(wget -qO- https://raw.githubusercontent.com/cantalupo555/xmind-solus-install/master/version.txt)"
 					sudo rm -rf xmind* /xmind/ /usr/share/fonts/truetype/xmind/
 					wget $version -O xmind-solus.zip&&mkdir xmind-solus/&&mv xmind-solus.zip xmind-solus/
 					cd xmind-solus/&&unzip xmind-solus.zip&&sudo rm -rf xmind-solus.zip setup.sh

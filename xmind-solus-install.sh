@@ -18,7 +18,6 @@ if [ $UID -ne 1000 ]; then
     sleep 5
     exit 1
     	else
-    		echo "OK"
     	    sleep 1
     		echo "....."
     		sleep 1
@@ -30,6 +29,8 @@ if [ $UID -ne 1000 ]; then
     		sleep 1
     		echo "....."
     		sleep 1
+    		echo "OK"
+    		sleep 3	
     	fi
 clear
 echo -e "\n\e[1;33mChecking that minimal requirements are ok\e[0m"
@@ -50,18 +51,19 @@ fi
 ARCH=$(uname -m)
 echo "Detected : $OS  $VER  $ARCH"&&r='add-apt-repository'
 if [[ "$OS" = "Solus" ]] ; then
+    sleep 1
+    echo "....."
+    sleep 1
+    echo "....."
+    sleep 1
+    echo "....."
+    sleep 1
+    echo "....."
+    sleep 1
+    echo "....."
+    sleep 1
     echo "OK"
-    sleep 1
-    echo "....."
-    sleep 1
-    echo "....."
-    sleep 1
-    echo "....."
-    sleep 1
-    echo "....."
-    sleep 1
-    echo "....."
-    sleep 1
+    sleep 5
 		else
 			sleep 1
     		echo "....."
@@ -78,7 +80,6 @@ if [[ "$OS" = "Solus" ]] ; then
     		sleep 5
     		exit 1
 		fi
-sleep 5
 clear
 echo -e "\n\e[1;33mChecking the Network\e[0m"
 	sleep 1

@@ -95,7 +95,7 @@ echo -e "\n\e[1;33mChecking the Network\e[0m"
     sleep 1
 if ! ping -c 5 google.com -q ; then
 	echo
-	echo -e "Connect with Google, FAIL."
+	echo -e "\033[1;31mConnect with Google, FAIL.\033[0m"
 	exit
 	echo
 		else
@@ -106,7 +106,7 @@ if ! ping -c 5 google.com -q ; then
 	sleep 2
 if ! ping -c 5 dl3.xmind.net -q ; then
 	echo
-	echo -e "Connect with XMind, FAIL."
+	echo -e "\033[1;31mConnect with XMind, FAIL.\033[0m"
 	exit
 	echo
 		else

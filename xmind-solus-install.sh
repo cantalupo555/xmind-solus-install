@@ -81,7 +81,7 @@ if [[ "$OS" = "Solus" ]] ; then
     		exit 1
 		fi
 clear
-echo -e "\n\e[1;33mChecking the Network\e[0m"
+echo -e "\n\e[1;33mChecking Network\e[0m"
 	sleep 1
     echo "....."
     sleep 1

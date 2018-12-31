@@ -14,10 +14,6 @@ if [ $UID -ne 1000 ]; then
     sleep 5
     exit 1
     	else
-    	    sleep 1
-    		echo "....."
-    		sleep 1
-    		echo "....."
     		sleep 1
     		echo "....."
     		sleep 1

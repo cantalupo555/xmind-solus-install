@@ -3,10 +3,6 @@
 clear
 echo -e "\n\e[1;33mChecking user\e[0m"
 if [ $UID -ne 1000 ]; then
-	sleep 1
-    echo "....."
-    sleep 1
-    echo "....."
     sleep 1
     echo "....."
     sleep 1

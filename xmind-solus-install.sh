@@ -142,7 +142,7 @@ do
 				echo "-------------------------------------------------------------------------"
 				echo "Install XMind"
 				echo ""
-				if [ -e /xmind/ ]; then
+				if [ -e /opt/xmind/ ]; then
 					echo -e "\nXMind can not be installed, \e[1;33mplease run Option 3 and try again\e[0m"
 					o1
 					if [ -z "$v" ]; then
@@ -167,14 +167,14 @@ do
 							else
 								echo "[setup] WARNING: Custom fonts for XMind are not found."
 							fi
-							echo "[setup] Done."&&cd ..&&mv xmind-solus/ xmind/&&cd xmind/configuration/&&wget https://github.com/cantalupo555/xmind-solus-install/raw/master/default128.png&&cd ../..&&sudo mv xmind/ /
+							echo "[setup] Done."&&cd ..&&mv xmind-solus/ xmind/&&cd xmind/configuration/&&wget https://github.com/cantalupo555/xmind-solus-install/raw/master/default128.png&&cd ../..&&sudo mv xmind/ /opt/&&cd ~
 							if [ -e ~/.local/share/applications/ ]; then
 								#mv /xmind/configuration/XMind.desktop ~/.local/share/applications/&&cd ~
-								echo -e "[Desktop Entry]\nVersion=1.0\nName=XMind\nGenericName=Mind Mapping\nGenericName[pt_BR]=Mapa Mental\nComment=The Most Popular Mind Mapping Software on The Planet\nComment[pt_BR]=O mais popular software de mapeamento mental do planeta\nExec=sh /xmind/xmind.sh\nIcon=/xmind/configuration/default128.png\nTerminal=false\nType=Application\nMimeType=application/x-xmind;\nStartupNotify=true\nCategories=Office;\nKeywords=map;mind;" | tee ~/.local/share/applications/xmind.desktop&&cd ~
+								echo -e "[Desktop Entry]\nVersion=1.0\nName=XMind\nGenericName=Mind Mapping\nGenericName[pt_BR]=Mapa Mental\nComment=The Most Popular Mind Mapping Software on The Planet\nComment[pt_BR]=O mais popular software de mapeamento mental do planeta\nExec=/opt/xmind/XMind_amd64/./XMind\nIcon=/opt/xmind/configuration/default128.png\nTerminal=false\nType=Application\nMimeType=application/x-xmind;\nStartupNotify=true\nCategories=Office;\nKeywords=map;mind;" | tee ~/.local/share/applications/xmind.desktop&&cd ~
 								else
 									mkdir ~/.local/share/applications/
 									#mv /xmind/configuration/XMind.desktop ~/.local/share/applications/&&cd ~
-									echo -e "[Desktop Entry]\nVersion=1.0\nName=XMind\nGenericName=Mind Mapping\nGenericName[pt_BR]=Mapa Mental\nComment=The Most Popular Mind Mapping Software on The Planet\nComment[pt_BR]=O mais popular software de mapeamento mental do planeta\nExec=sh /xmind/xmind.sh\nIcon=/xmind/configuration/default128.png\nTerminal=false\nType=Application\nMimeType=application/x-xmind;\nStartupNotify=true\nCategories=Office;\nKeywords=map;mind;" | tee ~/.local/share/applications/xmind.desktop&&cd ~
+									echo -e "[Desktop Entry]\nVersion=1.0\nName=XMind\nGenericName=Mind Mapping\nGenericName[pt_BR]=Mapa Mental\nComment=The Most Popular Mind Mapping Software on The Planet\nComment[pt_BR]=O mais popular software de mapeamento mental do planeta\nExec=/opt/xmind/XMind_amd64/./XMind\nIcon=/opt/xmind/configuration/default128.png\nTerminal=false\nType=Application\nMimeType=application/x-xmind;\nStartupNotify=true\nCategories=Office;\nKeywords=map;mind;" | tee ~/.local/share/applications/xmind.desktop&&cd ~
 								fi
 					fi
 				clear
@@ -197,7 +197,7 @@ do
 				echo "-------------------------------------------------------------------------"
 				echo "Update XMind"
 				echo ""
-				if [ -e /xmind/ ]; then
+				if [ -e /opt/xmind/ ]; then
 					version="$(wget -qO- https://raw.githubusercontent.com/cantalupo555/xmind-solus-install/master/version.txt)"
 					sudo rm -rf xmind* /xmind/ /usr/share/fonts/truetype/xmind/
 					wget $version -O xmind-solus.zip&&mkdir xmind-solus/&&mv xmind-solus.zip xmind-solus/
@@ -216,7 +216,7 @@ do
 							else
 								echo "[setup] WARNING: Custom fonts for XMind are not found."
 							fi
-							echo "[setup] Done."&&cd ..&&mv xmind-solus-linux/ xmind/&&sudo mv xmind/ /&&cd ~
+							echo "[setup] Done."&&cd ..&&mv xmind-solus/ xmind/&&cd xmind/configuration/&&wget https://github.com/cantalupo555/xmind-solus-install/raw/master/default128.png&&cd ../..&&sudo mv xmind/ /opt/&&cd ~
 					else
 						echo -e "\nXMind can not be update, \e[1;33mplease run Option 1 and try again\e[0m"
 						o1
@@ -245,7 +245,7 @@ do
 				echo "Uninstalling XMind"
 				echo ""
 				if [ -e /xmind/ ]; then					
-					sudo rm -rf xmind* /xmind/ /usr/share/fonts/truetype/xmind/ ~/.local/share/applications/XMind.desktop&&cd ~
+					sudo rm -rf xmind* /opt/xmind/ /usr/share/fonts/truetype/xmind/ ~/.local/share/applications/xmind.desktop&&cd ~
 					sleep 2
 					echo "		Uninstalling"
 					sleep 2

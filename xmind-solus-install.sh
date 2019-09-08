@@ -152,7 +152,7 @@ do
 						version="$(wget -qO- https://raw.githubusercontent.com/cantalupo555/xmind-solus-install/master/version.txt)"
 						sudo rm -rf xmind*
 						wget $version -O xmind-solus.zip&&mkdir xmind-solus/&&mv xmind-solus.zip xmind-solus/
-						cd xmind-solus/&&unzip xmind-solus.zip&&sudo rm -rf xmind-solus.zip setup.sh
+						cd xmind-solus/&&unzip xmind-solus.zip&&sudo rm -rf xmind-solus.zip setup.sh&&echo "cd /opt/xmind/XMind_amd64/;./XMind" > xmind.sh
 						set -e
 						SCRIPT_NAME="$0"
 						SCRIPT_DIR="$(cd "$(dirname "$SCRIPT_NAME")" && pwd)"
@@ -170,11 +170,11 @@ do
 							echo "[setup] Done."&&cd ..&&mv xmind-solus/ xmind/&&cd xmind/configuration/&&wget https://github.com/cantalupo555/xmind-solus-install/raw/master/default128.png&&cd ../..&&sudo mv xmind/ /opt/&&cd ~
 							if [ -e ~/.local/share/applications/ ]; then
 								#mv /xmind/configuration/XMind.desktop ~/.local/share/applications/&&cd ~
-								echo -e "[Desktop Entry]\nVersion=1.0\nName=XMind\nGenericName=Mind Mapping\nGenericName[pt_BR]=Mapa Mental\nComment=The Most Popular Mind Mapping Software on The Planet\nComment[pt_BR]=O mais popular software de mapeamento mental do planeta\nExec=/opt/xmind/XMind_amd64/./XMind\nIcon=/opt/xmind/configuration/default128.png\nTerminal=false\nType=Application\nMimeType=application/x-xmind;\nStartupNotify=true\nCategories=Office;\nKeywords=map;mind;" | tee ~/.local/share/applications/xmind.desktop&&cd ~
+								echo -e "[Desktop Entry]\nVersion=1.0\nName=XMind\nGenericName=Mind Mapping\nGenericName[pt_BR]=Mapa Mental\nComment=The Most Popular Mind Mapping Software on The Planet\nComment[pt_BR]=O mais popular software de mapeamento mental do planeta\nExec=sh /opt/xmind/xmind.sh\nIcon=/opt/xmind/configuration/default128.png\nTerminal=false\nType=Application\nMimeType=application/x-xmind;\nStartupNotify=true\nCategories=Office;\nKeywords=map;mind;" | tee ~/.local/share/applications/xmind.desktop&&cd ~
 								else
 									mkdir ~/.local/share/applications/
 									#mv /xmind/configuration/XMind.desktop ~/.local/share/applications/&&cd ~
-									echo -e "[Desktop Entry]\nVersion=1.0\nName=XMind\nGenericName=Mind Mapping\nGenericName[pt_BR]=Mapa Mental\nComment=The Most Popular Mind Mapping Software on The Planet\nComment[pt_BR]=O mais popular software de mapeamento mental do planeta\nExec=/opt/xmind/XMind_amd64/./XMind\nIcon=/opt/xmind/configuration/default128.png\nTerminal=false\nType=Application\nMimeType=application/x-xmind;\nStartupNotify=true\nCategories=Office;\nKeywords=map;mind;" | tee ~/.local/share/applications/xmind.desktop&&cd ~
+									echo -e "[Desktop Entry]\nVersion=1.0\nName=XMind\nGenericName=Mind Mapping\nGenericName[pt_BR]=Mapa Mental\nComment=The Most Popular Mind Mapping Software on The Planet\nComment[pt_BR]=O mais popular software de mapeamento mental do planeta\nExec=sh /opt/xmind/xmind.sh\nIcon=/opt/xmind/configuration/default128.png\nTerminal=false\nType=Application\nMimeType=application/x-xmind;\nStartupNotify=true\nCategories=Office;\nKeywords=map;mind;" | tee ~/.local/share/applications/xmind.desktop&&cd ~
 								fi
 					fi
 				clear
@@ -201,7 +201,7 @@ do
 					version="$(wget -qO- https://raw.githubusercontent.com/cantalupo555/xmind-solus-install/master/version.txt)"
 					sudo rm -rf xmind* /xmind/ /usr/share/fonts/truetype/xmind/
 					wget $version -O xmind-solus.zip&&mkdir xmind-solus/&&mv xmind-solus.zip xmind-solus/
-					cd xmind-solus/&&unzip xmind-solus.zip&&sudo rm -rf xmind-solus.zip setup.sh
+					cd xmind-solus/&&unzip xmind-solus.zip&&sudo rm -rf xmind-solus.zip setup.sh&&echo "cd /opt/xmind/XMind_amd64/;./XMind" > xmind.sh
 					set -e
 					SCRIPT_NAME="$0"
 					SCRIPT_DIR="$(cd "$(dirname "$SCRIPT_NAME")" && pwd)"
